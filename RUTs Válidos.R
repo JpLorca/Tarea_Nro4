@@ -1,10 +1,10 @@
 source('Funciones.R')
 
-#t: tiempo que se demora en ejecutar un codigo
-#def t: tiempo que se demora en recorrer la lista Ruts_validos
-#Ruts_validos: Generar numeros de rut y almacenarlos en una lista
-#Se generan 5000 numeros aleatorios entre 0:9999999 sin repeticion 
-#Cada uno acompa�ado de su dv
+#t: Tiempo de demora en ejecutar un código
+#def t: Tiempo captado en recorrer una lista de ruts_válidos
+#Ruts_validos: Generar RUTs válidos y almacenarlos en una lista
+#Se generan 5000 números de manera aleatoria compuestos entre 0:9999999, evitando repetirlos 
+#Cada uno acompañado de su dv
 
 t <- proc.time()
 Ruts_validos <- list()
@@ -14,7 +14,7 @@ for(i in sample(0000000:9999999,5000,replace=F)){
 }
 proc.time() - t
 
-#Tiempo que se demora en recorrer la lista Ruts_validos
+#Tiempo de demora en recorrer la lista Ruts_validos
 > proc.time() - t
 user  system elapsed 
 5.34    0.08    5.50 
