@@ -1,69 +1,109 @@
 source('Funciones.R')
 
-#t: tiempo que se demora en ejecutar un codigo
-#def t: tiempo que se demora en recorrer la lista Ruts_validos
-#Ruts_validos: Generar numeros de rut y almacenarlos en una lista
-#Se generan 5000 numeros aleatorios entre 0:9999999 sin repeticion 
-#Cada uno acompañado de su dv
+#Ejercicio 1
 
-t <- proc.time()
-Ruts_validos <- list()
-for(i in sample(0000000:9999999,5000,replace=F)){
-  rut<- print(paste(i,"-",dv(i)))
-  Ruts_validos<-c(Ruts_validos,rut)
-}
-proc.time() - t
+#Ruts: Lista de Int y string intercalado.
+#Def Ruts: Lista de 5001 datos distintos, de 8 digitos (rut)
+#y el digito verificador (dv) asociado al dato
+#Ejemplo: Ruts
+# [1] 17664987-9
 
-#Tiempo que se demora en recorrer la lista Ruts_validos
-> proc.time() - t
-user  system elapsed 
-5.34    0.08    5.50 
->   
-  
-#contarSaldoNegativo: ... -> int
-#Definicion contarSaldoNegativo:
-  
-clientes <- list (list(1,"paulina",-22000),list(2,"ruben",-50000),list(3,"carlos",1000),list(4,"mary",-25000))
+#dv: Int->String
+#Def dv: Retorna el digito verificador de cada eleento de la lista para validar el Rut
+#Ejemplo: dv(67534287)->k
 
-contarSaldoNegativo <- function(listaclientes){
-  GenteSaldoNegativo <- 0
-  for (cliente in listaclientes){
-    if (cliente[3] < 0){
-      GenteSaldoNegativo<- (GenteSaldoNegativo+1)
-    }
-  }
-  return(GenteSaldoNegativo)
-}
 
 #Test
-contarSaldoNegativo(clientes)
+
+dv(17664987)
+
+rm(Ruts)
+
+t<-proc.time()
+Ruts<-list()
+for(i in 17664987:(17664987+5000)){
+  rut<-print(paste(i,"-",dv(i)))
+  Ruts <- c(Ruts,rut)
+}
+proc.time()-t
 
 
-#sinvocales: string -> string sin vocales
-#Definicion sinvocales: introducir x frase que sea devuelta sin las vocales
-#Ejemplos: Chile campeon , El partido termino con 0 goles 
+#Ejercicio 2
 
-sinVocales <- function(oracion){
-  stringsinvocales <- ""
-  strspliteada <- strsplit(oracion, "")[[1]]  
-  for (letra in strspliteada){
-    if(letra != "a" && letra != "e" && letra != "i" && letra != "o" && letra != "u" && letra != "A" && letra != "E"
-       && letra != "I" && letra != "O" && letra != "U") {
-      stringsinvocales <- paste(stringsinvocales, letra, sep="")
+#Contar: String->String
+#Def contar: "strsplit(a,b)[[1]]":
+#             Seprara y cuenta las palabras ingresadas en "a"
+#             Separadas por la condiciOn de "b"
+#Ejemplo: Contar<-strsplit(" Porque la llama que llama estando en llamas me llama, alguien más llama "," ")[[1]] 
+#         
+#   ->    [1] ""        "Porque"  "la"      "llama"   "que"     "llama"   "estando" "en"      "llamas" 
+#         [10] "me"      "llama,"  "alguien" "mas"     "llama"  
+
+#Minuscula: String->String
+#Def Minuscula: considera todas las letras como minuscula 
+#Ejemplo: Minuscula(Contar)
+#        [1] ""        "porque"  "la"      "llama"   "que"     "llama"   "estando" "en"      "llamas" 
+#        [10] "me"      "llama,"  "alguien" "mas"     "llama"  
+
+#Unico: String->String
+#Def Unico: Cuenta solo una palabra sin repetir y en minisculas
+#Ejemplo: unico(Minuscula)
+# ->     [1] "porque"  "la"      "llama"   "que"     "estando" "en"      "llamas"  "me"      ","      
+#        [10] "alguien" "mas"   
+
+
+Minuscula<-tolower(Contar)
+Unico<-unique(Minuscula)
+Minuscula2<-tolower(Contar2)
+Unico2<-unique(Minuscula2)
+
+#Test1
+Contar
+Minuscula
+Unico
+
+#Test2
+Contar2
+Minuscula2
+Unico2
+
+
+#Contado las palabras
+ContandoLlamas<-list()
+for(i in 1:length(Unico2)){
+  print(Unico2[i])
+  contador <- 0
+  for (y in 1:length(Minuscula2)){
+    print(Minuscula2[y])
+    if(Unico2[i]==Minuscula2[y]){
+      print(contador <- contador+1)
     }
   }
-  return(stringsinvocales)
+  ContandoLlamas<-c(ContandoLlamas,contador) 
 }
 
+#Ejercicio 3
+#SaldoNegativa: String->Int
+#Def: Cuenta la cantidad de clientes
+# que tienen saldo negativo insrtos en una lista.
+#Ejemplo: SaldoNagito(ListaClientes) -> 4
+
+ListaClientes<-list(list(1,"A",-2500),
+                    list(2,"B",-3400),
+                    list(3,"C",-1500),
+                    list(4,"D",5550),
+                    list(5,"E",1670),
+                    list(6,"F",23990))
 #Test
-Frase <- "Chile campeon"
-sinVocales(Frase)
-Frase_2 <- "El partido termino con 0 goles"
-sinVocales(Frase_2)
+SaldoNegativo(ListaClientes)
 
 
-#strsplit: sting -> int
-#Def strsplit: función para contar palabras
+#Ejercicio 4
+#SaldoNegativa: String->String
+#Def: Retorna las frases en una oracion sin vocales
+#Ejemplo: SinVocales('El partido termino con 0 goles')->'l prtd trmn cn 0 gls'
 
+Oracion<- "los meteoritos le dieron en la cabeza"
 
-strsplit(a,b)[[1]]
+#Test
+SinVocales(Oracion)
