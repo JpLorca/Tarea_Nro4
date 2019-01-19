@@ -34,10 +34,10 @@ proc.time()-t
 #Def contar: "strsplit(a,b)[[1]]":
 #             Seprara y cuenta las palabras ingresadas en "a"
 #             Separadas por la condiciOn de "b"
-#Ejemplo: Contar<-strsplit(" Porque la llama que llama estando en llamas me llama, alguien más llama "," ")[[1]] 
+#Ejemplo: Contar<-strsplit(" Porque la llama que llama estando en llamas me llama alguien más llama a la llama"," ")[[1]] 
 #         
 #   ->    [1] ""        "Porque"  "la"      "llama"   "que"     "llama"   "estando" "en"      "llamas" 
-#         [8] "me"      "llama,"  "alguien" "mas"     "llama"  
+#         [10] "me"      "llama,"  "alguien" "mas"     "llama"  
 
 #Minuscula: String->String
 #Def Minuscula: considera todas las letras como minuscula 
@@ -48,8 +48,8 @@ proc.time()-t
 #Unico: String->String
 #Def Unico: Cuenta solo una palabra sin repetir y en minisculas
 #Ejemplo: unico(Minuscula)
-# ->     [1] "porque"  "la"      "llama"   "que"     "estando" "en"      "llamas"  "me"      ","      
-#        [10] "alguien" "mas"   
+# ->     [1] ""   "porque"  "la"      "llama"   "que"     "estando" "en"      "llamas"  "me"      ","      
+#        [9] "alguien" "mas"   
 
 
 Minuscula<-tolower(Contar)
@@ -88,12 +88,12 @@ for(i in 1:length(Unico2)){
 # que tienen saldo negativo insrtos en una lista.
 #Ejemplo: SaldoNegativo(ListaClientes) -> 3
 
-ListaClientes<-list(list(1,"A",-2500),
-                    list(2,"B",-3400),
-                    list(3,"C",-1500),
-                    list(4,"D",5550),
-                    list(5,"E",1670),
-                    list(6,"F",23990))
+ListaClientes<-list(list(1,"Alberto",-2500),
+                    list(2,"Bastian",-3400),
+                    list(3,"Carlitos",-1500),
+                    list(4,"Daniela",5550),
+                    list(5,"Esther",1670),
+                    list(6,"Freddy",23990))
 #Test
 SaldoNegativo(ListaClientes)
 
@@ -103,7 +103,8 @@ SaldoNegativo(ListaClientes)
 #Def: Retorna las frases en una oracion sin vocales
 #Ejemplo: SinVocales('El partido termino con 0 goles')->'l prtd trmn cn 0 gls'
 
-Oracion<- "los meteoritos le dieron en la cabeza"
+Oracion<- "los meteoritos le dieron en la cabeza por no usar casco"
 
 #Test
 SinVocales(Oracion)
+ 
