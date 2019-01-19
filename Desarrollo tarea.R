@@ -1,16 +1,16 @@
 source('Funciones.R')
 
-#Ejercicio 1
+#Ejercicio N1
 
-#Ruts: Lista de Int y string intercalado.
-#Def Ruts: Lista de 5001 datos distintos, de 8 digitos (rut)
-#y el digito verificador (dv) asociado al dato
-#Ejemplo: Ruts
+#RUTs: Lista de Int y string intercalados.
+#Def RUTs: Lista de 5001 datos distintos, de 8 digitos (RUT)
+#y el digito verificador (DV) asociado al dato
+#Ejemplo: RUTs
 # [1] 17664987-9
 
-#dv: Int->String
-#Def dv: Retorna el digito verificador de cada eleento de la lista para validar el Rut
-#Ejemplo: dv(67534287)->k
+#DV: Int->String
+#Def DV: Retorna el digito verificador de cada elemento de la lista para validar el Rut
+#Ejemplo: DV(67534287)->k
 
 
 #Test
@@ -28,7 +28,7 @@ for(i in 17664987:(17664987+5000)){
 proc.time()-t
 
 
-#Ejercicio 2
+#Ejercicio N2
 
 #Contar: String->String
 #Def contar: "strsplit(a,b)[[1]]":
@@ -37,7 +37,7 @@ proc.time()-t
 #Ejemplo: Contar<-strsplit(" Porque la llama que llama estando en llamas me llama, alguien más llama "," ")[[1]] 
 #         
 #   ->    [1] ""        "Porque"  "la"      "llama"   "que"     "llama"   "estando" "en"      "llamas" 
-#         [10] "me"      "llama,"  "alguien" "mas"     "llama"  
+#         [8] "me"      "llama,"  "alguien" "mas"     "llama"  
 
 #Minuscula: String->String
 #Def Minuscula: considera todas las letras como minuscula 
@@ -68,7 +68,7 @@ Minuscula2
 Unico2
 
 
-#Contado las palabras
+#Contando las palabras
 ContandoLlamas<-list()
 for(i in 1:length(Unico2)){
   print(Unico2[i])
@@ -82,11 +82,11 @@ for(i in 1:length(Unico2)){
   ContandoLlamas<-c(ContandoLlamas,contador) 
 }
 
-#Ejercicio 3
-#SaldoNegativa: String->Int
+#Ejercicio N3
+#SaldoNegativo: String->Int
 #Def: Cuenta la cantidad de clientes
 # que tienen saldo negativo insrtos en una lista.
-#Ejemplo: SaldoNagito(ListaClientes) -> 4
+#Ejemplo: SaldoNegativo(ListaClientes) -> 3
 
 ListaClientes<-list(list(1,"A",-2500),
                     list(2,"B",-3400),
@@ -98,8 +98,8 @@ ListaClientes<-list(list(1,"A",-2500),
 SaldoNegativo(ListaClientes)
 
 
-#Ejercicio 4
-#SaldoNegativa: String->String
+#Ejercicio N4
+#SaldoNegativo: String->String
 #Def: Retorna las frases en una oracion sin vocales
 #Ejemplo: SinVocales('El partido termino con 0 goles')->'l prtd trmn cn 0 gls'
 
