@@ -11,7 +11,7 @@ Tiempo de demora real = 6,28 segundos
 
 #2 Test Creación de una función para contar palabras, convertirlas a minúscula y durante el proceso de contar omitir las palabras repetidas. 
 El misterio de esta función es que se acortó el segundo conteo, dado que había una palabra repetida.
-Era 1 sola llama
+Era 1 sola llama(animal), 3 llamas (verbo), y 1 llama (que quema) ouch!!
 
 #3 Se crea la función Saldo Negativo, con la finalidad de crear listas de clientes y asignarles un nombre y un valor
 Al correr la función nos dirá cuantos saldos negativos hay dentro de todas las listas.
