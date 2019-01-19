@@ -34,7 +34,7 @@ proc.time()-t
 #Def contar: "strsplit(a,b)[[1]]":
 #             Seprara y cuenta las palabras ingresadas en "a"
 #             Separadas por la condiciOn de "b"
-#Ejemplo: Contar<-strsplit(" Porque la llama que llama estando en llamas me llama alguien más llama a la llama"," ")[[1]] 
+#Ejemplo: Contar<-strsplit(" Porque la llama que llama estando en llamas me llama, alguien más llama "," ")[[1]] 
 #         
 #   ->    [1] ""        "Porque"  "la"      "llama"   "que"     "llama"   "estando" "en"      "llamas" 
 #         [10] "me"      "llama,"  "alguien" "mas"     "llama"  
